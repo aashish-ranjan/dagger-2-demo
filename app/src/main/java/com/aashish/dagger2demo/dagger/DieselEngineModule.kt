@@ -1,5 +1,7 @@
-package com.aashish.dagger2demo
+package com.aashish.dagger2demo.dagger
 
+import com.aashish.dagger2demo.car.DieselEngine
+import com.aashish.dagger2demo.car.Engine
 import dagger.Binds
 import dagger.Module
 

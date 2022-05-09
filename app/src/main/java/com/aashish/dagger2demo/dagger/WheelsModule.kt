@@ -1,5 +1,8 @@
-package com.aashish.dagger2demo
+package com.aashish.dagger2demo.dagger
 
+import com.aashish.dagger2demo.car.Rim
+import com.aashish.dagger2demo.car.Tyre
+import com.aashish.dagger2demo.car.Wheels
 import dagger.Module
 import dagger.Provides
 

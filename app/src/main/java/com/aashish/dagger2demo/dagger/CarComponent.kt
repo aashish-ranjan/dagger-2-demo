@@ -1,5 +1,6 @@
-package com.aashish.dagger2demo
+package com.aashish.dagger2demo.dagger
 
+import com.aashish.dagger2demo.MainActivity
 import dagger.Component
 
 @Component (modules = [WheelsModule::class, DieselEngineModule::class])

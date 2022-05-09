@@ -1,4 +1,4 @@
-package com.aashish.dagger2demo
+package com.aashish.dagger2demo.car
 
 import android.util.Log
 import javax.inject.Inject
