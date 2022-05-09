@@ -12,6 +12,7 @@ class Car @Inject constructor(val wheels: Wheels) {
     lateinit var engine: Engine
 
     fun drive() {
+        engine.start()
         Log.d(TAG, "driving..")
     }
 
