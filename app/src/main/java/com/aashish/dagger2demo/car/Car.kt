@@ -3,7 +3,7 @@ package com.aashish.dagger2demo.car
 import android.util.Log
 import javax.inject.Inject
 
-class Car @Inject constructor(val wheels: Wheels) {
+class Car @Inject constructor(private val driver: Driver, private val wheels: Wheels) {
     companion object {
         private const val TAG = "Car"
     }
@@ -13,7 +13,7 @@ class Car @Inject constructor(val wheels: Wheels) {
 
     fun drive() {
         engine.start()
-        Log.d(TAG, "driving..")
+        Log.d(TAG, "$driver driving car $this")
     }
 
     @Inject
