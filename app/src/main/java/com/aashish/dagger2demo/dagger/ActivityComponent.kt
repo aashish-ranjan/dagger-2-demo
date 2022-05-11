@@ -6,8 +6,8 @@ import dagger.Component
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Singleton
-@Component (modules = [WheelsModule::class, PetrolEngineModule::class])
+@PerActivity
+@Component (dependencies = [AppComponent::class], modules = [WheelsModule::class, PetrolEngineModule::class])
 interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 
@@ -19,6 +19,8 @@ interface ActivityComponent {
 
         @BindsInstance
         fun capacity(@Named("capacity") capacity: Int): Builder
+
+        fun appComponent(appComponent: AppComponent): Builder
 
         fun build(): ActivityComponent
     }
