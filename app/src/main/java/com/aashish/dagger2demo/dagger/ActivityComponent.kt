@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component (modules = [WheelsModule::class, PetrolEngineModule::class])
-interface CarComponent {
+interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 
     @Component.Builder
@@ -20,6 +20,6 @@ interface CarComponent {
         @BindsInstance
         fun capacity(@Named("capacity") capacity: Int): Builder
 
-        fun build(): CarComponent
+        fun build(): ActivityComponent
     }
 }
