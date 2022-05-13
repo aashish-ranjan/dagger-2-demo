@@ -3,7 +3,6 @@ package com.aashish.dagger2demo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.aashish.dagger2demo.car.Car
-import com.aashish.dagger2demo.dagger.DaggerActivityComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -14,11 +13,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val carComponent = DaggerActivityComponent.builder()
-            .horsePower(120)
-            .capacity(1400)
-            .appComponent((application as DaggerDemoApplication).appComponent)
-            .build()
+        val carComponent = (application as DaggerDemoApplication).appComponent
+            .getActivityComponent()
 
         carComponent.inject(this)
         car.drive()
