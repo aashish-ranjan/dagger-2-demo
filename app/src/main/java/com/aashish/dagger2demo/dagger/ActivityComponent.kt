@@ -10,16 +10,10 @@ import javax.inject.Named
 interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 
-    @Subcomponent.Builder
-    interface Bldr {
-
-        @BindsInstance
-        fun horsePower(@Named("horse_power") horsepower: Int): Bldr
-
-        @BindsInstance
-        fun capacity(@Named("capacity") capacity: Int): Bldr
-
-        fun bld(): ActivityComponent
+    @Subcomponent.Factory
+    interface Fctry {
+        fun kreate(@BindsInstance @Named("horse_power") horsepower: Int,
+                   @BindsInstance @Named("capacity") capacity: Int): ActivityComponent
     }
 
 
