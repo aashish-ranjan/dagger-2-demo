@@ -6,5 +6,5 @@ import javax.inject.Singleton
 @Singleton
 @Component (modules = [DriverModule::class])
 interface AppComponent {
-    fun getActivityComponent(): ActivityComponent
+    fun getActivityComponentBuilder(): ActivityComponent.Bldr
 }
